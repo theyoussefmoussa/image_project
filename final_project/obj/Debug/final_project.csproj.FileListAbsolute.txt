@@ -38,3 +38,6 @@ D:\Study\Thrid Year\Second Term\image project\final_project\bin\Debug\final_proj
 D:\Study\Thrid Year\Second Term\image project\final_project\bin\Debug\openCV.dll
 D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_pr.9E626BF4.Up2Date
 D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.EqualizedForm.resources
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.BrightnessForm.resources
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.NegativeForm.resources
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.ContrastForm.resources

@@ -7,6 +7,7 @@ namespace final_project
 {
     public partial class Form1 : Form
     {
+        // Only one global variable needed for the current image
         IplImage image1;
         FormGrey greyFormInstance;
 
@@ -24,59 +25,123 @@ namespace final_project
             {
                 try
                 {
+                    // Load the image directly into our working variable
                     image1 = cvlib.CvLoadImage(openFileDialog1.FileName, cvlib.CV_LOAD_IMAGE_COLOR);
                     DisplayImageToMain(image1, pictureBox1);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Error loading image: " + ex.Message);
                 }
             }
         }
 
-        // Restored missing toRGB method
-        private void toRGBToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (image1.ptr == IntPtr.Zero) return;
-            ShowRGBChannels();
+            // 1. Wipe all PictureBoxes
+            pictureBox1.BackgroundImage = null;
+            if (pictureBox2 != null) pictureBox2.BackgroundImage = null;
+            if (pictureBox3 != null) pictureBox3.BackgroundImage = null;
+            if (pictureBox4 != null) pictureBox4.BackgroundImage = null;
+
+            // 2. Release Memory safely
+            if (image1.ptr != IntPtr.Zero)
+            {
+                cvlib.CvReleaseImage(ref image1);
+                image1.ptr = IntPtr.Zero;
+            }
+
+            // 3. Close the secondary Grey form if it exists
+            if (greyFormInstance != null && !greyFormInstance.IsDisposed)
+            {
+                greyFormInstance.Close();
+            }
+
+            MessageBox.Show("Workspace cleared.");
         }
 
-        // Restored missing Click event for the picturebox
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void DisplayImageToMain(IplImage src, PictureBox pb)
         {
-            // Leave empty or add logic
+            if (pb == null || src.ptr == IntPtr.Zero) return;
+
+            CvSize size = new CvSize(pb.Width, pb.Height);
+            IplImage resized = cvlib.CvCreateImage(size, src.depth, src.nChannels);
+            cvlib.CvResize(ref src, ref resized, cvlib.CV_INTER_LINEAR);
+
+            pb.BackgroundImage = (System.Drawing.Image)resized;
+            pb.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        // --- Filter Menu Items ---
+
+        private void brightnessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image1.ptr != IntPtr.Zero)
+            {
+                BrightnessForm bForm = new BrightnessForm(image1);
+                if (bForm.ShowDialog() == DialogResult.OK)
+                {
+                    image1 = bForm.GetResult();
+                    DisplayImageToMain(image1, pictureBox1);
+                }
+            }
+        }
+
+        private void negariveFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image1.ptr != IntPtr.Zero)
+            {
+                NegativeForm nForm = new NegativeForm(image1);
+                if (nForm.ShowDialog() == DialogResult.OK)
+                {
+                    image1 = nForm.GetResult();
+                    DisplayImageToMain(image1, pictureBox1);
+                }
+            }
+        }
+
+        private void contrastFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image1.ptr != IntPtr.Zero)
+            {
+                ContrastForm cForm = new ContrastForm(image1);
+                if (cForm.ShowDialog() == DialogResult.OK)
+                {
+                    image1 = cForm.GetResult();
+                    DisplayImageToMain(image1, pictureBox1);
+                }
+            }
         }
 
         private void toGreyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (image1.ptr == IntPtr.Zero)
-            {
-                MessageBox.Show("Please load an image first.");
-                return;
-            }
-
+            if (image1.ptr == IntPtr.Zero) return;
             if (greyFormInstance == null || greyFormInstance.IsDisposed)
             {
                 greyFormInstance = new FormGrey(image1);
                 greyFormInstance.Show();
             }
-            else
+            else greyFormInstance.Focus();
+        }
+
+        private void equalizationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image1.ptr != IntPtr.Zero)
             {
-                greyFormInstance.Focus();
+                EqualizedForm eqForm = new EqualizedForm(image1);
+                eqForm.Show();
             }
         }
 
-        private void showHistToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toRGBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (greyFormInstance != null && !greyFormInstance.IsDisposed)
+            if (image1.ptr != IntPtr.Zero)
             {
-                greyFormInstance.CalculateAndShowHistogram();
-            }
-            else
-            {
-                MessageBox.Show("Please open the Gray Form first.");
+                ShowRGBChannels();
             }
         }
+
+        // --- Helper Methods ---
 
         private void ShowRGBChannels()
         {
@@ -107,43 +172,14 @@ namespace final_project
                 }
             }
 
-            // Note: Ensure your Form1 has pictureBox2, 3, and 4 for this to work
             DisplayImageToMain(redImg, pictureBox2);
             DisplayImageToMain(greenImg, pictureBox3);
             DisplayImageToMain(blueImg, pictureBox4);
         }
 
-        private void DisplayImageToMain(IplImage src, PictureBox pb)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (pb == null) return;
-            CvSize size = new CvSize(pb.Width, pb.Height);
-            IplImage resized = cvlib.CvCreateImage(size, src.depth, src.nChannels);
-            cvlib.CvResize(ref src, ref resized, cvlib.CV_INTER_LINEAR);
-            pb.BackgroundImage = (System.Drawing.Image)resized;
-        }
-
-        private void equalizationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (image1.ptr != IntPtr.Zero)
-            {
-                // Pass the original image to the new form
-                EqualizedForm eqForm = new EqualizedForm(image1);
-                eqForm.Show();
-            }
-            else
-            {
-                MessageBox.Show("Please load an image first.");
-            }
-        }
-
-        private void showHistogramToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void histogramToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            // Placeholder to prevent designer errors
         }
     }
 }
