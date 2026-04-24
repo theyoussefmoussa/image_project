@@ -24,3 +24,17 @@ D:\Study\Thrid Year\Second Term\final_project\obj\Debug\final_project.csproj.Cor
 D:\Study\Thrid Year\Second Term\final_project\obj\Debug\final_pr.9E626BF4.Up2Date
 D:\Study\Thrid Year\Second Term\final_project\obj\Debug\final_project.exe
 D:\Study\Thrid Year\Second Term\final_project\obj\Debug\final_project.pdb
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.csproj.AssemblyReference.cache
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.Form1.resources
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.FormGrey.resources
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.Properties.Resources.resources
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.csproj.GenerateResource.cache
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.csproj.CoreCompileInputs.cache
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.exe
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.pdb
+D:\Study\Thrid Year\Second Term\image project\final_project\bin\Debug\final_project.exe.config
+D:\Study\Thrid Year\Second Term\image project\final_project\bin\Debug\final_project.exe
+D:\Study\Thrid Year\Second Term\image project\final_project\bin\Debug\final_project.pdb
+D:\Study\Thrid Year\Second Term\image project\final_project\bin\Debug\openCV.dll
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_pr.9E626BF4.Up2Date
+D:\Study\Thrid Year\Second Term\image project\final_project\obj\Debug\final_project.EqualizedForm.resources

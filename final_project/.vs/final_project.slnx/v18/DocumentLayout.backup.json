@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|d:\\study\\thrid year\\second term\\image project\\final_project\\formgrey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|solutionrelative:formgrey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|d:\\study\\thrid year\\second term\\image project\\final_project\\equalizedhistogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|solutionrelative:equalizedhistogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|d:\\study\\thrid year\\second term\\image project\\final_project\\equalizedhistogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|solutionrelative:equalizedhistogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +21,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\formgrey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|solutionrelative:formgrey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|d:\\study\\thrid year\\second term\\image project\\final_project\\formgrey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F35EB3-BC7D-408D-94F0-05E1661FBF79}|final_project.csproj|solutionrelative:formgrey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,54 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EqualizedHistogram.cs",
+              "DocumentMoniker": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\EqualizedHistogram.cs",
+              "RelativeDocumentMoniker": "EqualizedHistogram.cs",
+              "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\EqualizedHistogram.cs*",
+              "RelativeToolTip": "EqualizedHistogram.cs*",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAqwH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T22:17:00.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EqualizedHistogram.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\EqualizedHistogram.cs",
+              "RelativeDocumentMoniker": "EqualizedHistogram.cs",
+              "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\EqualizedHistogram.cs [Design]*",
+              "RelativeToolTip": "EqualizedHistogram.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T22:06:18.347Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FormGrey.cs",
               "DocumentMoniker": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\FormGrey.cs",
               "RelativeDocumentMoniker": "FormGrey.cs",
               "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\FormGrey.cs",
               "RelativeToolTip": "FormGrey.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAuwC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T01:33:57.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FormGrey.cs [Design]",
               "DocumentMoniker": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\FormGrey.cs",
               "RelativeDocumentMoniker": "FormGrey.cs",
-              "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\dip_labs\\final_project\\FormGrey.cs [Design]",
-              "RelativeToolTip": "..\\..\\dip_labs\\final_project\\FormGrey.cs [Design]",
+              "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\FormGrey.cs [Design]",
+              "RelativeToolTip": "FormGrey.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T01:30:56.184Z"
+              "WhenOpened": "2026-04-24T01:30:56.184Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T00:52:26.216Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAiwKUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T00:56:03.768Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\Study\\Thrid Year\\Second Term\\image project\\final_project\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\Study\\Thrid Year\\Second Term\\dip_labs\\final_project\\Form1.cs [Design]",
-              "RelativeToolTip": "..\\..\\dip_labs\\final_project\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T00:52:26.216Z"
+              "WhenOpened": "2026-04-24T00:56:03.768Z",
+              "EditorCaption": ""
             }
           ]
         }

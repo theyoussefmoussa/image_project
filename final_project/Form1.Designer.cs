@@ -29,24 +29,22 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.processToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.convertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.histogramsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toRGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toGreyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showHistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.equalizedHistogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.equalizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,18 +65,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 297);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -90,7 +76,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -98,7 +84,6 @@
             // 
             this.processToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.convertToolStripMenuItem,
-            this.histogramsToolStripMenuItem,
             this.filtersToolStripMenuItem});
             this.processToolStripMenuItem.Name = "processToolStripMenuItem";
             this.processToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
@@ -108,25 +93,11 @@
             // 
             this.convertToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toRGBToolStripMenuItem,
-            this.toGreyToolStripMenuItem});
+            this.toGreyToolStripMenuItem,
+            this.equalizationToolStripMenuItem});
             this.convertToolStripMenuItem.Name = "convertToolStripMenuItem";
             this.convertToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.convertToolStripMenuItem.Text = "Convert";
-            // 
-            // histogramsToolStripMenuItem
-            // 
-            this.histogramsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showHistToolStripMenuItem,
-            this.equalizedHistogramToolStripMenuItem});
-            this.histogramsToolStripMenuItem.Name = "histogramsToolStripMenuItem";
-            this.histogramsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.histogramsToolStripMenuItem.Text = "Histograms";
-            // 
-            // filtersToolStripMenuItem
-            // 
-            this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
-            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.filtersToolStripMenuItem.Text = "Filters";
             // 
             // toRGBToolStripMenuItem
             // 
@@ -142,17 +113,11 @@
             this.toGreyToolStripMenuItem.Text = "To Grey ";
             this.toGreyToolStripMenuItem.Click += new System.EventHandler(this.toGreyToolStripMenuItem_Click);
             // 
-            // showHistToolStripMenuItem
+            // filtersToolStripMenuItem
             // 
-            this.showHistToolStripMenuItem.Name = "showHistToolStripMenuItem";
-            this.showHistToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.showHistToolStripMenuItem.Text = "Show Histogram";
-            // 
-            // equalizedHistogramToolStripMenuItem
-            // 
-            this.equalizedHistogramToolStripMenuItem.Name = "equalizedHistogramToolStripMenuItem";
-            this.equalizedHistogramToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.equalizedHistogramToolStripMenuItem.Text = "Equalized Histogram";
+            this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
+            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.filtersToolStripMenuItem.Text = "Filters";
             // 
             // viewToolStripMenuItem
             // 
@@ -166,14 +131,26 @@
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.resetToolStripMenuItem.Text = "Reset";
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.clearToolStripMenuItem.Text = "Clear";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(276, 297);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -199,6 +176,13 @@
             this.pictureBox4.Size = new System.Drawing.Size(276, 297);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            // 
+            // equalizationToolStripMenuItem
+            // 
+            this.equalizationToolStripMenuItem.Name = "equalizationToolStripMenuItem";
+            this.equalizationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.equalizationToolStripMenuItem.Text = "Equalization";
+            this.equalizationToolStripMenuItem.Click += new System.EventHandler(this.equalizationToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -235,16 +219,14 @@
         private System.Windows.Forms.ToolStripMenuItem convertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toRGBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toGreyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem histogramsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showHistToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem equalizedHistogramToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ToolStripMenuItem equalizationToolStripMenuItem;
     }
 }
 
