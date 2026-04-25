@@ -91,6 +91,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RGBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RGBForm.Designer.cs">
+      <DependentUpon>RGBForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BrightnessForm.resx">
       <DependentUpon>BrightnessForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +124,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RGBForm.resx">
+      <DependentUpon>RGBForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

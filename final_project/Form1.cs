@@ -7,7 +7,7 @@ namespace final_project
 {
     public partial class Form1 : Form
     {
-        // Only one global variable needed for the current image
+        // Global variables
         IplImage image1;
         FormGrey greyFormInstance;
 
@@ -25,7 +25,6 @@ namespace final_project
             {
                 try
                 {
-                    // Load the image directly into our working variable
                     image1 = cvlib.CvLoadImage(openFileDialog1.FileName, cvlib.CV_LOAD_IMAGE_COLOR);
                     DisplayImageToMain(image1, pictureBox1);
                 }
@@ -38,11 +37,8 @@ namespace final_project
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // 1. Wipe all PictureBoxes
+            // 1. Clear the main display
             pictureBox1.BackgroundImage = null;
-            if (pictureBox2 != null) pictureBox2.BackgroundImage = null;
-            if (pictureBox3 != null) pictureBox3.BackgroundImage = null;
-            if (pictureBox4 != null) pictureBox4.BackgroundImage = null;
 
             // 2. Release Memory safely
             if (image1.ptr != IntPtr.Zero)
@@ -51,7 +47,7 @@ namespace final_project
                 image1.ptr = IntPtr.Zero;
             }
 
-            // 3. Close the secondary Grey form if it exists
+            // 3. Close the secondary form if it's still open
             if (greyFormInstance != null && !greyFormInstance.IsDisposed)
             {
                 greyFormInstance.Close();
@@ -72,6 +68,33 @@ namespace final_project
             pb.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
+        // --- Navigation to New Forms ---
+
+        private void toRGBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image1.ptr != IntPtr.Zero)
+            {
+                // Create and show the new RGB separation form
+                RGBForm rgbWindow = new RGBForm(image1);
+                rgbWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please load an image first.");
+            }
+        }
+
+        private void toGreyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image1.ptr == IntPtr.Zero) return;
+            if (greyFormInstance == null || greyFormInstance.IsDisposed)
+            {
+                greyFormInstance = new FormGrey(image1);
+                greyFormInstance.Show();
+            }
+            else greyFormInstance.Focus();
+        }
+
         // --- Filter Menu Items ---
 
         private void brightnessToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,11 +102,15 @@ namespace final_project
             if (image1.ptr != IntPtr.Zero)
             {
                 BrightnessForm bForm = new BrightnessForm(image1);
+
+                // ShowDialog blocks Form1 until BrightnessForm is closed
+                // Only update image1 if the user clicked "Confirm" (button2)
                 if (bForm.ShowDialog() == DialogResult.OK)
                 {
                     image1 = bForm.GetResult();
                     DisplayImageToMain(image1, pictureBox1);
                 }
+                // If they clicked Cancel (button1), this 'if' is skipped and image1 remains original
             }
         }
 
@@ -113,17 +140,6 @@ namespace final_project
             }
         }
 
-        private void toGreyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (image1.ptr == IntPtr.Zero) return;
-            if (greyFormInstance == null || greyFormInstance.IsDisposed)
-            {
-                greyFormInstance = new FormGrey(image1);
-                greyFormInstance.Show();
-            }
-            else greyFormInstance.Focus();
-        }
-
         private void equalizationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (image1.ptr != IntPtr.Zero)
@@ -133,53 +149,11 @@ namespace final_project
             }
         }
 
-        private void toRGBToolStripMenuItem_Click(object sender, EventArgs e)
+        // --- Designer Compatibility placeholders ---
+        private void resetToolStripMenuItem_Click(object sender, EventArgs e) { }
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (image1.ptr != IntPtr.Zero)
-            {
-                ShowRGBChannels();
-            }
-        }
-
-        // --- Helper Methods ---
-
-        private void ShowRGBChannels()
-        {
-            IplImage redImg = cvlib.CvCreateImage(new CvSize(image1.width, image1.height), image1.depth, image1.nChannels);
-            IplImage greenImg = cvlib.CvCreateImage(new CvSize(image1.width, image1.height), image1.depth, image1.nChannels);
-            IplImage blueImg = cvlib.CvCreateImage(new CvSize(image1.width, image1.height), image1.depth, image1.nChannels);
-
-            int srcAdd = image1.imageData.ToInt32();
-            int rAdd = redImg.imageData.ToInt32();
-            int gAdd = greenImg.imageData.ToInt32();
-            int bAdd = blueImg.imageData.ToInt32();
-
-            unsafe
-            {
-                for (int r = 0; r < image1.height; r++)
-                {
-                    for (int c = 0; c < image1.width; c++)
-                    {
-                        int index = (image1.width * r * image1.nChannels) + (c * image1.nChannels);
-                        byte blue = *(byte*)(srcAdd + index + 0);
-                        byte green = *(byte*)(srcAdd + index + 1);
-                        byte red = *(byte*)(srcAdd + index + 2);
-
-                        *(byte*)(rAdd + index + 2) = red;
-                        *(byte*)(gAdd + index + 1) = green;
-                        *(byte*)(bAdd + index + 0) = blue;
-                    }
-                }
-            }
-
-            DisplayImageToMain(redImg, pictureBox2);
-            DisplayImageToMain(greenImg, pictureBox3);
-            DisplayImageToMain(blueImg, pictureBox4);
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            // Placeholder to prevent designer errors
+            // This is a placeholder to satisfy the Designer
         }
     }
 }
